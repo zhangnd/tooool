@@ -1,16 +1,13 @@
 {
   "name": "tooool",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "工具函数",
   "keywords": [
     "tool",
     "tooool"
   ],
   "main": "index.js",
-  "types": "types/index.d.ts",
-  "files": [
-    "types"
-  ],
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/zhangnd/tooool.git"

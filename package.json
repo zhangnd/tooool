@@ -1,0 +1,21 @@
+{
+  "name": "tooool",
+  "version": "1.0.0",
+  "description": "工具函数",
+  "keywords": [
+    "tool",
+    "tooool"
+  ],
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangnd/tooool.git"
+  },
+  "homepage": "https://github.com/zhangnd/tooool",
+  "author": "zhangnd",
+  "license": "MIT"
+}

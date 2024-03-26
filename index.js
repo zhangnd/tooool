@@ -9,16 +9,8 @@
   }
 })(this, (function() {
   'use strict';
-  
-  const version = '1.0.3';
 
-  function tooool() {
-    
-  }
-
-  tooool.prototype = {
-    version
-  };
+  let tooool;
 
   // 数组乱序
   function shuffle(arr) {
@@ -98,11 +90,11 @@
     return lastIndex > -1 ? val.substring(lastIndex + 1) : '';
   }
 
-  tooool.shuffle = shuffle;
-  tooool.randomstr = randomstr;
-  tooool.formatTime = formatTime;
-  tooool.postTime = postTime;
-  tooool.subsuffix = subsuffix;
-
-  return tooool;
+  return tooool = {
+    shuffle,
+    randomstr,
+    formatTime,
+    postTime,
+    subsuffix
+  };
 }));

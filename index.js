@@ -90,11 +90,34 @@
     return lastIndex > -1 ? val.substring(lastIndex + 1) : '';
   }
 
+  let flag;
+  // 节流
+  function throttle(func, wait = 500) {
+    if (!flag) {
+      flag = true;
+      typeof func === 'function' && func();
+      setTimeout(() => {
+        flag = false;
+      }, wait);
+    }
+  }
+
+  let timeout = null
+  // 防抖
+  function debounce(func, wait = 500) {
+    if (timeout !== null) clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      typeof func === 'function' && func()
+    }, wait)
+  }
+
   return tooool = {
     shuffle,
     randomstr,
     formatTime,
     postTime,
-    subsuffix
+    subsuffix,
+    throttle,
+    debounce
   };
 }));

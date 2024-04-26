@@ -57,6 +57,7 @@
     return fmt;
   }
 
+  // 发布时间
   function postTime(time, fmt = 'yyyy-MM-dd hh:mm') {
     if (typeof time !== 'number') {
       return '';
@@ -111,6 +112,32 @@
     }, wait)
   }
 
+  // 深拷贝
+  function deepCopy(obj,  map = new WeakMap()) {
+    if (typeof obj === 'object' && obj !== null) {
+      if (map.has(obj)) {
+        return map.get(obj);
+      }
+      if (obj instanceof Date) {
+        return new Date(obj.getTime());
+      }
+      if (obj instanceof RegExp) {
+        return new RegExp(obj);
+      }
+      if (obj.constructor === Object || obj.constructor === Array) {
+        const newObj = obj.constructor();
+        map.set(obj, newObj);
+        for (let key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            newObj[key] = deepCopy(obj(key), map);
+          }
+        }
+        return newObj;
+      }
+    }
+    return obj;
+  }
+
   return tooool = {
     shuffle,
     randomstr,
@@ -118,6 +145,7 @@
     postTime,
     subsuffix,
     throttle,
-    debounce
+    debounce,
+    deepCopy
   };
 }));

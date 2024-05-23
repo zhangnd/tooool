@@ -7,7 +7,7 @@
     global = typeof globalThis !== 'undefined' ? globalThis : global || self;
     global.tooool = factory();
   }
-})(this, (function() {
+})(this, function() {
   'use strict';
 
   let tooool;
@@ -148,4 +148,4 @@
     debounce,
     deepCopy
   };
-}));
+});

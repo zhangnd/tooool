@@ -1,8 +1,8 @@
 (function(root, factory) {
-  if (typeof exports === 'object' && typeof module !== 'undefined') {
-    module.exports = factory();
-  } else if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     define(factory);
+  } else if (typeof module === 'object' && module.exports) {
+    module.exports = factory();
   } else {
     root.tooool = factory();
   }

@@ -1,16 +1,13 @@
-(function(global, factory) {
+(function(root, factory) {
   if (typeof exports === 'object' && typeof module !== 'undefined') {
     module.exports = factory();
   } else if (typeof define === 'function' && define.amd) {
     define(factory);
   } else {
-    global = typeof globalThis !== 'undefined' ? globalThis : global || self;
-    global.tooool = factory();
+    root.tooool = factory();
   }
-})(this, function() {
+})(typeof globalThis !== 'undefined' ? globalThis : global || self, function() {
   'use strict';
-
-  let tooool;
 
   // 数组乱序
   function shuffle(arr) {
@@ -138,7 +135,7 @@
     return obj;
   }
 
-  return tooool = {
+  return {
     shuffle,
     randomstr,
     formatTime,
